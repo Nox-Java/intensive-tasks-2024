@@ -35,7 +35,7 @@ public class Task2 {
     public static void main(String[] args) {
         int floorAmount = 1;
         int entranceAmount = 1;
-        int flatNumber = 5;
+        int flatNumber = 4;
 
         System.out.println(getFlatLocation(floorAmount, entranceAmount, flatNumber));
     }
@@ -44,21 +44,22 @@ public class Task2 {
 
         int entranceNumber = 0;
         int floorNumber = 0;
-        String  flatLocation ="";
+        String flatLocation = "";
 
         if (floorAmount > 0 || entranceAmount > 0 || flatNumber > 0) {
             if (flatNumber > floorAmount * entranceAmount * 4) {
                 return "Такой квартиры не существует";
             }
             entranceNumber = ((flatNumber - 1) / (floorAmount * 4)) + 1;
-            floorNumber = floorAmount -(((entranceNumber * floorAmount * 4) - flatNumber) / 4);
+            floorNumber = floorAmount - (((entranceNumber * floorAmount * 4) - flatNumber) / 4);
 
-            switch (flatNumber % 4) {
-                case 0: flatLocation = "справа от лифта, вправо"; break;
-                case 1: flatLocation = "слева от лифта, влево"; break;
-                case 2: flatLocation = "слева от лифта, вправо"; break;
-                case 3: flatLocation = "справа от лифта, влево"; break;
-            }
+            flatLocation = switch (flatNumber % 4) {
+                case 0 -> "справа от лифта, вправо";
+                case 1 -> "слева от лифта, влево";
+                case 2 -> "слева от лифта, вправо";
+                case 3 -> "справа от лифта, влево";
+                default -> flatLocation;
+            };
 
             return flatNumber + " кв - " + entranceNumber + " подъезд, " + floorNumber + " этаж, " + flatLocation;
 
