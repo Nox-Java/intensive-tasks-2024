@@ -42,8 +42,8 @@ public class Task2 {
 
     static String getFlatLocation(int floorAmount, int entranceAmount, int flatNumber) {
 
-        int entranceNumber = 0;
-        int floorNumber = 0;
+        int entranceNumber;
+        int floorNumber;
         String flatLocation = "";
 
         if (floorAmount > 0 || entranceAmount > 0 || flatNumber > 0) {
