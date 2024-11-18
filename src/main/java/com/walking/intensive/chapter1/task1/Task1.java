@@ -15,29 +15,30 @@ package com.walking.intensive.chapter1.task1;
 public class Task1 {
     public static void main(String[] args) {
 //        Для собственных проверок можете делать любые изменения в этом методе
-        int age = 101;
+        int age = 22;
 
         System.out.println(getAgeString(age));
     }
 
     static String getAgeString(int age) {
-        if (age >= 0 && age <= 127) {
+        if (age < 0 || age > 127) {
 
-            if (age % 10 == 1 && age % 100 != 11) {
-                return "Вам " + age + " год";
-            }
-            if (age % 10 == 2 && age % 100 != 12) {
-                return "Вам " + age + " года";
-            }
-            if (age % 10 == 3 && age % 100 != 13) {
-                return "Вам " + age + " года";
-            }
-            if (age % 10 == 4 && age % 100 != 14) {
-                return "Вам " + age + " года";
-            }
-            return "Вам " + age + " лет";
+            return "Некорректный ввод";
         }
-        return "Некорректный ввод";
+
+        if (age % 10 == 1 && age % 100 != 11) {
+            return "Вам " + age + " год";
+        }
+        if (age % 10 == 2 && age % 100 != 12) {
+            return "Вам " + age + " года";
+        }
+        if (age % 10 == 3 && age % 100 != 13) {
+            return "Вам " + age + " года";
+        }
+        if (age % 10 == 4 && age % 100 != 14) {
+            return "Вам " + age + " года";
+        }
+        return "Вам " + age + " лет";
 
     }
 }
