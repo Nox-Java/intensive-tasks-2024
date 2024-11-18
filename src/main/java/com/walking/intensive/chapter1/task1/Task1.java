@@ -24,20 +24,20 @@ public class Task1 {
         if (age >= 0 && age <= 127) {
 
             if (age % 10 == 1 && age % 100 != 11) {
-                return "Вам " + age + " год.";
+                return "Вам " + age + " год";
             }
             if (age % 10 == 2 && age % 100 != 12) {
-                return "Вам " + age + " года.";
+                return "Вам " + age + " года";
             }
             if (age % 10 == 3 && age % 100 != 13) {
-                return "Вам " + age + " года.";
+                return "Вам " + age + " года";
             }
             if (age % 10 == 4 && age % 100 != 14) {
-                return "Вам " + age + " года.";
+                return "Вам " + age + " года";
             }
-            return "Вам " + age + " лет.";
+            return "Вам " + age + " лет";
         }
-        return "Либо Вы еще не родились, либо уже того...";
+        return "Некорректный ввод";
 
     }
 }
