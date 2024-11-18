@@ -44,7 +44,7 @@ public class Task2 {
 
         int entranceNumber;
         int floorNumber;
-        String flatLocation;
+        String flatLocation = "";
 
         if (floorAmount > 0 || entranceAmount > 0 || flatNumber > 0) {
             if (flatNumber > floorAmount * entranceAmount * 4) {
