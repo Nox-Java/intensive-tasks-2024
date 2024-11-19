@@ -33,11 +33,6 @@ package com.walking.intensive.chapter1.task2;
  */
 public class Task2 {
     public static void main(String[] args) {
-        int floorAmount = 50;
-        int entranceAmount = 10;
-        int flatNumber = 698;
-
-        System.out.println(getFlatLocation(floorAmount, entranceAmount, flatNumber));
     }
 
     static String getFlatLocation(int floorAmount, int entranceAmount, int flatNumber) {
@@ -46,24 +41,25 @@ public class Task2 {
         int floorNumber;
         String flatLocation = "";
 
-        if (floorAmount > 0 || entranceAmount > 0 || flatNumber > 0) {
-            if (flatNumber > floorAmount * entranceAmount * 4) {
-                return "Такой квартиры не существует";
-            }
-            entranceNumber = ((flatNumber - 1) / (floorAmount * 4)) + 1;
-            floorNumber = floorAmount - (((entranceNumber * floorAmount * 4) - flatNumber) / 4);
-
-            flatLocation = switch (flatNumber % 4) {
-                case 0 -> "справа от лифта, вправо";
-                case 1 -> "слева от лифта, влево";
-                case 2 -> "слева от лифта, вправо";
-                case 3 -> "справа от лифта, влево";
-                default -> flatLocation;
-            };
-
-            return flatNumber + " кв - " + entranceNumber + " подъезд, " + floorNumber + " этаж, " + flatLocation;
-
+        if (floorAmount < 0 || entranceAmount < 0 || flatNumber < 0) {
+            return "Некорректные входные данные";
         }
-        return "Некорректные входные данные";
+        if (flatNumber > floorAmount * entranceAmount * 4) {
+            return "Такой квартиры не существует";
+        }
+
+        entranceNumber = ((flatNumber - 1) / (floorAmount * 4)) + 1;
+        floorNumber = floorAmount - (((entranceNumber * floorAmount * 4) - flatNumber) / 4);
+
+        flatLocation = switch (flatNumber % 4) {
+            case 0 -> "справа от лифта, вправо";
+            case 1 -> "слева от лифта, влево";
+            case 2 -> "слева от лифта, вправо";
+            case 3 -> "справа от лифта, влево";
+            default -> flatLocation;
+        };
+
+        return flatNumber + " кв - " + entranceNumber + " подъезд, " + floorNumber + " этаж, " + flatLocation;
+
     }
 }
