@@ -45,7 +45,7 @@ public class Task2 {
         if (floorAmount < 0 || entranceAmount < 0 || flatNumber < 0) {
             return "Некорректные входные данные";
         }
-        if (flatNumber > floorAmount * entranceAmount * 4) {
+        if (flatNumber > floorAmount * entranceAmount * countFlatFloor) {
             return "Такой квартиры не существует";
         }
 
