@@ -39,6 +39,7 @@ public class Task2 {
 
         int entranceNumber;
         int floorNumber;
+        int countFlatFloor = 4;
         String flatLocation = "";
 
         if (floorAmount < 0 || entranceAmount < 0 || flatNumber < 0) {
@@ -48,10 +49,10 @@ public class Task2 {
             return "Такой квартиры не существует";
         }
 
-        entranceNumber = ((flatNumber - 1) / (floorAmount * 4)) + 1;
-        floorNumber = floorAmount - (((entranceNumber * floorAmount * 4) - flatNumber) / 4);
+        entranceNumber = ((flatNumber - 1) / (floorAmount * countFlatFloor)) + 1;
+        floorNumber = floorAmount - (((entranceNumber * floorAmount * countFlatFloor) - flatNumber) / countFlatFloor);
 
-        flatLocation = switch (flatNumber % 4) {
+        flatLocation = switch (flatNumber % countFlatFloor) {
             case 0 -> "справа от лифта, вправо";
             case 1 -> "слева от лифта, влево";
             case 2 -> "слева от лифта, вправо";
