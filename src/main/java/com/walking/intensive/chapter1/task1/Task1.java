@@ -16,7 +16,6 @@ public class Task1 {
     public static void main(String[] args) {
 //        Для собственных проверок можете делать любые изменения в этом методе
         int age = 22;
-
         System.out.println(getAgeString(age));
     }
 
@@ -24,7 +23,6 @@ public class Task1 {
         if (age < 0 || age > 127) {
             return "Некорректный ввод";
         }
-
         if (age % 10 == 1 && age % 100 != 11) {
             return "Вам " + age + " год";
         }
@@ -38,7 +36,6 @@ public class Task1 {
             return "Вам " + age + " года";
         }
         return "Вам " + age + " лет";
-
     }
 }
 
