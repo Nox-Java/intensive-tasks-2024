@@ -42,7 +42,7 @@ public class Task2 {
         int countFlatFloor = 4;
         String flatLocation = "";
 
-        if (floorAmount < 0 || entranceAmount < 0 || flatNumber < 0) {
+        if (floorAmount <= 0 || entranceAmount <= 0 || flatNumber <= 0) {
             return "Некорректные входные данные";
         }
         if (flatNumber > floorAmount * entranceAmount * countFlatFloor) {
