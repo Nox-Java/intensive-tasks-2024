@@ -25,12 +25,29 @@ package com.walking.intensive.chapter1.task3;
  */
 public class Task3 {
     public static void main(String[] args) {
-//        Для собственных проверок можете делать любые изменения в этом методе
-    }
+        }
 
     static boolean isLeap(int year) {
-        //Место для вашего кода
 
-        return false; // Заглушка. При реализации - удалить
+        int fourYearsError = 4;
+        int oneHundredYearsError = 100;
+        int fourHundredYearsError = 400;
+
+        if (year <= 0) {
+            return false;
+        }
+        year = year % fourHundredYearsError;
+        if (year == 0) {
+            return true;
+        }
+        year = year % oneHundredYearsError;
+        if (year == 0) {
+            return false;
+        }
+        year = year % fourYearsError;
+        if (year == 0) {
+            return true;
+        }
+        return false;
     }
 }
